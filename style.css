@@ -1,0 +1,292 @@
+@import url('httpd://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap');
+@import 'utils.css';
+@import 'variable.css';
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: var(--pure);
+    background: var(--gray);
+}
+header{
+    background: linear-gradient(135deg, rgba(0,0,0,1), rgba(0,0,0,0.2)), url('sunrise.jpg');
+    background-size: cover;
+    min-height: 100vh;
+}
+header nav{
+    padding: 20px 40px 20px 100px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    border-bottom: 1px solid var(--gray);
+}
+header nav .right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header nav .right .nav-links a{
+    text-decoration: none;
+    color: var(--pure);
+    margin-right: 30px;
+    position: relative;
+}
+header nav .right .nav-links a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    width: 0%;
+    height: 2px;
+    background: var(--pure);
+    transition: width .3s ease-in-out;
+}
+header nav .right .nav-links a:hover::after{
+    width: 70%;
+}
+header nav .right .nav-links a.active::after{
+    width: 70%;
+}
+header nav .right .search>div{
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 50px;
+}
+header nav .right .search>div input{
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--pure);
+}
+header nav .right .search>div img{
+    padding-right: 16px;
+}
+.social>div{
+    border: 2px solid var(--pure);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    opacity: 0;
+}
+@keyframes moveIn{
+    from{
+        transform: translateX(-100px);
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+.social .fa-facebook-f, .fa-tumblr,.fa-instagram, .fa-youtube{
+    color: var(--pure);
+}
+.social div:hover .fab{
+    color: var(--dark);
+    transition: all .5s ease-in-out;
+}
+.social div:hover{
+    background: var(--pure);
+}
+.top{
+    position: relative;
+}
+.social{
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-right: 1px solid var(--gray);
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 87vh;
+}
+.top .cta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh-80px);
+
+}
+.top .cta h1{
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+.cta > div {
+    flex: 1;
+}
+.top .cta .left-section{
+    padding: 0 60px 0 30px;
+}
+.top .cta img{
+    height: 70vh;
+    transform: rotate(30deg);
+    margin-top: 40px;
+    animation: movespace 12s ease-in-out infinite alternate;
+}
+@keyframes movespace{
+    50%{
+        transform: translateY(60px) rotate(-30deg) scale(0.8);
+    }
+}
+.strip{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--dark);
+    padding: 40px 0;
+}
+.rocket>.container{
+    display: grid;
+    grid-template-columns: 1fr 100px 1fr;
+    grid-gap: 80px;
+    padding: 100px 0;
+}
+.container .rocket-body span{
+    font-size: 0;
+}
+.container .rocket-body span img{
+    width: 100%;
+}
+.rocket .block{
+    width: 70%;
+}
+.rocket .block h1{
+    font-size: 32px;
+    font-weight: 400;
+}
+.rocket .block .underline{
+    position: relative;
+    margin-bottom: 38px;
+}
+.rocket .block .underline::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -12px;
+        display: block;
+        width: 38%;
+        height: 2px;
+        background: var(--pure);
+}
+.rocket .block h1 .underline::before{
+    width: 25%;
+}
+.rocket p{
+    line-height: 1.6;
+}
+.rocket .block h2{
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.rocket .payload{
+    padding-top: 130px;
+}
+.rocket .payload h2{
+    padding-left: 80px;
+}
+.rocket .dragon{
+    padding-top: 120px;
+}
+.rocket .block button{
+    margin-top: 30px;
+}
+.rocket .composit{
+    padding-top: 60px;
+}
+.rocket .first-stage{
+    padding-top: 60px;
+}
+.rocket .second-stage{
+    padding-top: 60px;
+}
+.rocket .capacity{
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+}
+.rocket .capacity div:first-child{
+    margin-right: 40px;
+}
+.rocket .capacity h4{
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.rocket .capacity h6{
+    font-size: 40px;
+    font-weight: 400;
+}
+.rocket .capacity h6 small{
+    font-size: 12px;
+}
+.rocket .right-block .capacity{
+    padding-top: 120px;
+}
+.rocket .right-block .single{
+    padding-top: 40px;
+}
+.rocket .right-block .engines{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+.rocket .right-block .engines img{
+    width: 180px;
+}
+.rocket .right-block .marine{
+    padding-top: 100px;
+    width: 70%;
+}
+.rocket .right-block .marine h2{
+    font-size: 14px;
+    padding-left: 100px;
+    margin-bottom: 26px;
+}
+.right-block .floating{
+    position: sticky;
+    float: right;
+    top: 60px;
+    margin-right: -100px;
+}
+.right-block .floating img{
+    height: 350px;
+}
+.rocket .rocket-body span{
+    position: relative;
+}
+.rocket .rocket-body span:after{
+    content: "";
+    display: block;
+    position: absolute;
+    height: 2px;
+    background: var(--pure);
+    width: 160px;
+}
+.rocket .rocket-body span:nth-child(1)::after{
+    bottom: 16px;
+    left: 96%;
+}
+.rocket .rocket-body span:nth-child(2)::after{
+    bottom: 62%;
+    right: 100%;
+}
+.rocket .rocket-body span:nth-child(3)::after{
+    bottom: 64%;
+    right: 90%;
+}
